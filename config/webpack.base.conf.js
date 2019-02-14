@@ -2,6 +2,9 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const utils = require('./utils')
 
+/**
+ * @type {import('webpack').Configuration}
+ */
 module.exports = {
   mode: process.env.NODE_ENV,
   entry: utils.resolvePath('src/index.tsx'),

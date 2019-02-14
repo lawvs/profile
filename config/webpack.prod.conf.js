@@ -8,6 +8,9 @@ const utils = require('./utils')
 const publicUrl = process.env.PUBLIC_URL || '/'
 const publicPath = url.parse(publicUrl).pathname
 
+/**
+ * @type {import('webpack').Configuration}
+ */
 const webpackConfig = merge(baseWebpackConfig, {
   mode: 'production',
   bail: true,

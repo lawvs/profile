@@ -4,6 +4,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const baseWebpackConfig = require('./webpack.base.conf')
 const utils = require('./utils')
 
+/**
+ * @type {import('webpack').Configuration}
+ */
 const webpackConfig = merge(baseWebpackConfig, {
   mode: 'development',
   // https://webpack.js.org/configuration/devtool/
