@@ -5,15 +5,16 @@ module.exports = {
     node: true,
     browser: true,
   },
+  parser: '@typescript-eslint/parser',
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
     // https://github.com/benmosher/eslint-plugin-import
     'plugin:import/errors',
     'plugin:import/warnings',
+    'plugin:import/typescript',
   ],
-  plugins: ['import', 'react', 'prettier'],
-  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint', 'import', 'react', 'prettier'],
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
