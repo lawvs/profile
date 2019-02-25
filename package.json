@@ -20,6 +20,10 @@
   },
   "homepage": "https://github.com/lawvs/profile#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.15",
+    "@fortawesome/free-brands-svg-icons": "^5.7.2",
+    "@fortawesome/free-solid-svg-icons": "^5.7.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "i18next": "^14.1.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
