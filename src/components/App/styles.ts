@@ -9,4 +9,8 @@ export const Wrapper = styled.div`
   justify-content: center;
   background-color: #f7f7f7;
   overflow-x: hidden;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `
