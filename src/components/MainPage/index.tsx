@@ -3,8 +3,10 @@ import styled from 'styled-components'
 
 import Header from '../Header'
 import Content from '../Content'
+import { USERNAME } from '../../constant'
 
 const Page = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -20,10 +22,24 @@ const Page = styled.div`
   background-color: #fff;
 `
 
+const FooterWrapper = styled.footer`
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  color: #5f5f5f;
+`
+
+const Footer = () => (
+  <FooterWrapper>
+    CopyRight © {new Date().getFullYear()} {USERNAME}. All rights reserved.
+  </FooterWrapper>
+)
+
 const MainPage = () => (
   <Page>
     <Header />
     <Content />
+    <Footer />
   </Page>
 )
 
