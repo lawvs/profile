@@ -4,6 +4,9 @@ import i18next from 'i18next'
 import en_US from './en-US.json'
 import ja_JP from './ja-JP.json'
 import zh_CN from './zh-CN.json'
+import chinaIcon from './icon/china_icon.svg'
+import japanIcon from './icon/japan_icon.svg'
+import ukIcon from './icon/uk_icon.svg'
 
 const DEBUG = process.env.NODE_ENV === 'development'
 
@@ -12,16 +15,19 @@ const LOCALES = [
     tag: 'zh-CN',
     lng: '简体中文',
     res: zh_CN,
+    icon: chinaIcon,
   },
   {
     tag: 'ja-JP',
     lng: '日本語',
     res: ja_JP,
+    icon: japanIcon,
   },
   {
     tag: 'en-US',
     lng: 'English',
     res: en_US,
+    icon: ukIcon,
   },
 ]
 

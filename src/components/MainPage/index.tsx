@@ -1,5 +1,6 @@
 import React from 'react'
 
+import LanguagesSwitcher from '../LanguagesSwitcher'
 import Header from '../Header'
 import Content from '../Content'
 import { USERNAME } from '../../constant'
@@ -13,6 +14,7 @@ const Footer = () => (
 
 const MainPage = () => (
   <Page>
+    <LanguagesSwitcher />
     <Header />
     <Content />
     <Footer />
