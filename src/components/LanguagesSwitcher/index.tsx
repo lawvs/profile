@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 import i18next, { lngList } from '../../i18n'
@@ -20,16 +20,14 @@ const Badge = styled.img`
 
 const LanguagesSwitcher = () => {
   const [lng, setLng] = useState(i18next.language)
+  useEffect(() => {
+    i18next.changeLanguage(lng)
+  })
+
   const lngIndex = lngList.findIndex(l => l.tag === lng)
   const lngProps = lngList[lngIndex]
   const nextLng = lngList[(lngIndex + 1) % lngList.length]
-  return (
-    <Badge
-      src={lngProps.icon}
-      alt={lngProps.lng}
-      onClick={() => i18next.changeLanguage(nextLng.tag) && setLng(nextLng.tag)}
-    />
-  )
+  return <Badge src={lngProps.icon} alt={lngProps.lng} onClick={() => setLng(nextLng.tag)} />
 }
 
 export default LanguagesSwitcher

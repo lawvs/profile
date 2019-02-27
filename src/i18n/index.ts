@@ -63,6 +63,5 @@ i18next.init({
   },
 })
 
-export { language }
 export { LOCALES as lngList }
 export default i18next

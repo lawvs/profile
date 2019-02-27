@@ -1,38 +1,27 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
+import React, { useState, useEffect } from 'react'
 import i18next from 'i18next'
 import { withTranslation } from 'react-i18next'
 
 import Title from './Title'
 import { USERNAME, CAREER, AVATAR_URL } from '../../constant'
-
-const HeaderWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-self: stretch;
-  justify-content: center;
-  align-items: center;
-`
-
-const RoundImg = styled.img`
-  border: 1px solid #e1e4e8;
-  border-radius: 100%;
-`
+import { RoundImg, HeaderWrapper } from './styles'
 
 const Icon = ({
   src,
   ...restProps
 }: React.ImgHTMLAttributes<HTMLImageElement> | { src: Promise<string> }) => {
-  const render = (props: React.ImgHTMLAttributes<HTMLImageElement>) => <RoundImg {...props} />
+  const state = useState(src)
+  src = state[0]
+  const setSrc = state[1]
+  useEffect(() => {
+    if (src && typeof src !== 'string') {
+      src.then(setSrc)
+    }
+  })
   if (typeof src === 'string') {
-    return render({ src, ...restProps })
+    return <RoundImg src={src} {...restProps} />
   }
-  const [imgSrc, setSrc] = useState<string | null>(null)
-  src && src.then(setSrc)
-  if (!imgSrc) {
-    return null
-  }
-  return render({ src: imgSrc, ...restProps })
+  return null
 }
 
 const Header = ({ t }: { t: i18next.TFunction }) => (
