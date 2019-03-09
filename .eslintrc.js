@@ -7,14 +7,11 @@ module.exports = {
   },
   parser: '@typescript-eslint/parser',
   extends: [
+    'plugin:@typescript-eslint/recommended',
     'eslint:recommended',
     'plugin:react/recommended',
-    // https://github.com/benmosher/eslint-plugin-import
-    'plugin:import/errors',
-    'plugin:import/warnings',
-    'plugin:import/typescript',
   ],
-  plugins: ['@typescript-eslint', 'import', 'react', 'prettier'],
+  plugins: ['@typescript-eslint', 'react', 'prettier'],
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
@@ -26,6 +23,11 @@ module.exports = {
   rules: {
     // semi: ['error', 'never'],
     // 'comma-dangle': ['error', 'always-multiline'],
+    '@typescript-eslint/indent': ['error', 2],
+    '@typescript-eslint/camelcase': 0,
+    '@typescript-eslint/member-delimiter-style': ['error', { multiline: { delimiter: 'none' } }],
+    '@typescript-eslint/explicit-function-return-type': 0,
+    '@typescript-eslint/no-explicit-any': 'off',
     'linebreak-style': ['error', 'unix'],
     'no-console': ['warn', { allow: ['warn', 'error'] }],
     'no-undef': 'error',
@@ -33,7 +35,6 @@ module.exports = {
     'no-unused-vars': ['error', { args: 'none' }],
     'unicode-bom': 'error',
     'prefer-const': ['error', { destructuring: 'all' }],
-    'import/no-named-as-default-member': 'off',
     'prettier/prettier': 'warn',
   },
   settings: {

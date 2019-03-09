@@ -6,8 +6,9 @@
     "start": "npm run dev",
     "dev": "webpack-dev-server --config config/webpack.dev.conf.js --mode=development --colors --watch --hot",
     "build": "webpack --config config/webpack.prod.conf.js --mode=production --colors",
-    "lint": "eslint src/**",
-    "lint:fix": "eslint --fix src/**",
+    "lint": "eslint --ext .ts,.tsx,json .",
+    "lint:fix": "eslint --ext .ts,.tsx,json --fix .",
+    "clean": "rm -rf dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -42,7 +43,6 @@
     "clean-webpack-plugin": "^1.0.1",
     "copy-webpack-plugin": "^4.6.0",
     "eslint": "^5.13.0",
-    "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
     "html-webpack-plugin": "^3.2.0",
