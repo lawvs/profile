@@ -32,7 +32,8 @@ export const Page = styled.div`
 
 export const FooterWrapper = styled.footer`
   position: absolute;
-  right: 10px;
-  bottom: 10px;
+  margin: 10px;
+  right: 0px;
+  bottom: 0px;
   color: #5f5f5f;
 `
