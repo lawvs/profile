@@ -12,13 +12,15 @@ script:
   - npm run build
 before_deploy:
   - cp README.md dist/
+  - if [ $CNAME ]; then
+      echo $CNAME > dist/CNAME;
+    fi
 deploy:
   - provider: pages
     github_token: $GITHUB_TOKEN
     skip-cleanup: true
     keep-history: false
     local-dir: dist
-    fqdn: $CNAME
     on:
       branch: master
       # condition: $GITHUB_TOKEN IS present
