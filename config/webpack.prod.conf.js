@@ -1,6 +1,7 @@
 const url = require('url')
 const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const baseWebpackConfig = require('./webpack.base.conf')
 const utils = require('./utils')
@@ -20,6 +21,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     publicPath: publicPath,
   },
   plugins: [
+    new CleanWebpackPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       template: utils.resolvePath('public/index.html'),

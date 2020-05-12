@@ -1,5 +1,4 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
 const utils = require('./utils')
 
 /**
@@ -32,9 +31,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(['dist'], {
-      root: utils.resolvePath(),
-    }),
     new CopyWebpackPlugin([
       {
         from: utils.resolvePath('public'),
