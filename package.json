@@ -6,7 +6,7 @@
     "start": "npm run dev",
     "dev": "webpack-dev-server --config config/webpack.dev.conf.js --mode=development --colors --watch --hot",
     "build": "webpack --config config/webpack.prod.conf.js --mode=production --colors",
-    "lint": "eslint --ext .ts,.tsx,.json src",
+    "lint": "eslint --ext .ts,.tsx,.json .",
     "lint:fix": "npm run lint -- --fix",
     "clean": "rm -rf dist",
     "test": "echo \"Error: no test specified\" && exit 1"
