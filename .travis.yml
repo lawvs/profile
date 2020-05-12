@@ -18,9 +18,9 @@ before_deploy:
 deploy:
   - provider: pages
     github_token: $GITHUB_TOKEN
-    skip-cleanup: true
-    keep-history: false
-    local-dir: dist
+    skip_cleanup: true
+    keep_history: false
+    local_dir: dist
     on:
       branch: master
       # condition: $GITHUB_TOKEN IS present
