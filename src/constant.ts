@@ -36,9 +36,11 @@ interface GithubUser {
 }
 
 export const USERNAME = process.env.USERNAME || author
+export const EMAIL = process.env.EMAIL
 export const CAREER = 'Software Engineer'
 export const BLOG_URL = `https://${USERNAME}.github.io/`
 export const GITHUB_URL = `https://github.com/${USERNAME}`
+export const EMAIL_URL = EMAIL && `mailto:${EMAIL}`
 export const FEEDBACK_URL = bugs.url
 
 const GITHUB_API = `https://api.github.com/users/${USERNAME}`
