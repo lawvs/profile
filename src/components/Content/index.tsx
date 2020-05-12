@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import i18next from 'i18next'
 import { withTranslation } from 'react-i18next'
+import type { TFunction } from 'i18next'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faBook } from '@fortawesome/free-solid-svg-icons'
 
@@ -29,7 +29,7 @@ const Section = ({ children }: { children?: React.ReactNode }) => (
   <SectionWrapper>{children}</SectionWrapper>
 )
 
-const Content = ({ t }: { t: i18next.TFunction }) => (
+const Content = ({ t }: { t: TFunction }) => (
   <Section>
     {BUTTON_DATA.map(({ text, ...restProps }, i) => (
       <AnchorButton

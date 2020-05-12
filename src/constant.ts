@@ -42,5 +42,5 @@ export const GITHUB_URL = `https://github.com/${USERNAME}`
 export const FEEDBACK_URL = bugs.url
 
 const GITHUB_API = `https://api.github.com/users/${USERNAME}`
-const GITHUB_DATA: Promise<GithubUser> = fetch(GITHUB_API).then(res => res.json())
-export const AVATAR_URL: Promise<string> = GITHUB_DATA.then(json => json['avatar_url'])
+const GITHUB_DATA: Promise<GithubUser> = fetch(GITHUB_API).then((res) => res.json())
+export const AVATAR_URL: Promise<string> = GITHUB_DATA.then((json) => json['avatar_url'])

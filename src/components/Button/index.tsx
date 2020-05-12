@@ -17,7 +17,7 @@ const INVALID_PROPS: string[] = ['icon', 'text', 'children']
 const removeNonHTMLProps = (props: { [x: string]: any }, invalidProps = INVALID_PROPS) =>
   invalidProps.reduce(
     (prev, curr) => {
-      if (prev.hasOwnProperty(curr)) {
+      if (prev[curr]) {
         delete (prev as any)[curr]
       }
       return prev

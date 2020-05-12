@@ -24,7 +24,7 @@ const LanguagesSwitcher = () => {
     i18next.changeLanguage(lng)
   })
 
-  const lngIndex = lngList.findIndex(l => l.tag === lng)
+  const lngIndex = lngList.findIndex((l) => l.tag === lng)
   const lngProps = lngList[lngIndex]
   const nextLng = lngList[(lngIndex + 1) % lngList.length]
   return <Badge src={lngProps.icon} alt={lngProps.lng} onClick={() => setLng(nextLng.tag)} />

@@ -29,7 +29,7 @@ const LOCALES = [
     res: en_US,
     icon: ukIcon,
   },
-]
+] as const
 
 // LOCALES -> {'zh-CN': {translation: {...}}}
 const resources = LOCALES.reduce(
@@ -38,7 +38,7 @@ const resources = LOCALES.reduce(
 )
 
 const standardizeLocale = (language: string) => {
-  if (resources.hasOwnProperty(language)) {
+  if (language in resources) {
     return language
   }
   switch (language.substr(0, 2).toLowerCase()) {

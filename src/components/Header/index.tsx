@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import i18next from 'i18next'
 import { withTranslation } from 'react-i18next'
+import type { TFunction } from 'i18next'
 
 import Title from './Title'
 import { USERNAME, CAREER, AVATAR_URL } from '../../constant'
@@ -24,7 +24,7 @@ const Icon = ({
   return null
 }
 
-const Header = ({ t }: { t: i18next.TFunction }) => (
+const Header = ({ t }: { t: TFunction }) => (
   <HeaderWrapper>
     <Title title={USERNAME} subtitle={t(CAREER)} />
     <Icon width="128" height="128" src={AVATAR_URL} />
