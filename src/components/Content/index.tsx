@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { withTranslation } from 'react-i18next'
-import type { TFunction } from 'i18next'
+import { useTranslation } from 'react-i18next'
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub'
 import { faBook } from '@fortawesome/free-solid-svg-icons/faBook'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope'
@@ -39,18 +38,21 @@ const Section = ({ children }: { children?: React.ReactNode }) => (
   <SectionWrapper>{children}</SectionWrapper>
 )
 
-const Content = ({ t }: { t: TFunction }) => (
-  <Section>
-    {BUTTON_DATA.map(({ text, ...restProps }) => (
-      <AnchorButton
-        key={text}
-        text={text && t(text)}
-        target="_blank"
-        rel="noreferrer"
-        {...restProps}
-      />
-    ))}
-  </Section>
-)
+const Content = () => {
+  const { t } = useTranslation()
+  return (
+    <Section>
+      {BUTTON_DATA.map(({ text, ...restProps }) => (
+        <AnchorButton
+          key={text}
+          text={(text && t(text)) ?? undefined}
+          target="_blank"
+          rel="noreferrer"
+          {...restProps}
+        />
+      ))}
+    </Section>
+  )
+}
 
-export default withTranslation()(Content)
+export default Content

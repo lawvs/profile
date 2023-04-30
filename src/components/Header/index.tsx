@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react'
-import { withTranslation } from 'react-i18next'
-import type { TFunction } from 'i18next'
+import React, { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
+import { AVATAR_URL, CAREER, USERNAME } from '../../constant'
 import Title from './Title'
-import { USERNAME, CAREER, AVATAR_URL } from '../../constant'
-import { RoundImg, HeaderWrapper } from './styles'
+import { HeaderWrapper, RoundImg } from './styles'
 
 const Icon = ({
   src,
@@ -24,11 +23,14 @@ const Icon = ({
   return null
 }
 
-const Header = ({ t }: { t: TFunction }) => (
-  <HeaderWrapper>
-    <Title title={USERNAME} subtitle={t(CAREER)} />
-    <Icon width="128" height="128" src={AVATAR_URL} />
-  </HeaderWrapper>
-)
+const Header = () => {
+  const { t } = useTranslation()
+  return (
+    <HeaderWrapper>
+      <Title title={USERNAME} subtitle={t(CAREER) ?? ''} />
+      <Icon width="128" height="128" src={AVATAR_URL} />
+    </HeaderWrapper>
+  )
+}
 
-export default withTranslation()(Header)
+export default Header
