@@ -1,5 +1,5 @@
 # Profile
 
-[![Build Status](https://travis-ci.org/lawvs/profile.svg?branch=master)](https://travis-ci.org/lawvs/profile)
+[![Build and Deploy](https://github.com/lawvs/profile/actions/workflows/build.yml/badge.svg)](https://github.com/lawvs/profile/actions/workflows/build.yml)
 
 A simple profile card.
