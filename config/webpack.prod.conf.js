@@ -1,5 +1,5 @@
 const url = require('url')
-const merge = require('webpack-merge')
+const mergePlugin = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
@@ -12,16 +12,16 @@ const publicPath = url.parse(publicUrl).pathname
 /**
  * @type {import('webpack').Configuration}
  */
-const webpackConfig = merge(baseWebpackConfig, {
+const webpackConfig = mergePlugin.merge(baseWebpackConfig, {
   mode: 'production',
   bail: true,
   devtool: process.env.CI ? 'source-map' : false,
   output: {
     filename: '[name].[chunkhash:8].js',
     publicPath: publicPath,
+    clean: true,
   },
   plugins: [
-    new CleanWebpackPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       template: utils.resolvePath('public/index.html'),
