@@ -1,7 +1,6 @@
 const url = require('url')
 const mergePlugin = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const baseWebpackConfig = require('./webpack.base.conf')
 const utils = require('./utils')

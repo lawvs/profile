@@ -48,9 +48,8 @@ module.exports = {
       patterns: [
         {
           from: utils.resolvePath('public'),
-          to: '[name].[ext]',
           globOptions: {
-            ignore: ['index.html'],
+            ignore: ['**/index.html'],
           },
         },
       ],
