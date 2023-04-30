@@ -5,9 +5,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const baseWebpackConfig = require('./webpack.base.conf')
 const utils = require('./utils')
 
-const publicUrl = process.env.PUBLIC_URL || '/'
-const publicPath = url.parse(publicUrl).pathname
-
 /**
  * @type {import('webpack').Configuration}
  */
@@ -17,7 +14,6 @@ const webpackConfig = mergePlugin.merge(baseWebpackConfig, {
   devtool: process.env.CI ? 'source-map' : false,
   output: {
     filename: '[name].[chunkhash:8].js',
-    publicPath: publicPath,
     clean: true,
   },
   plugins: [
