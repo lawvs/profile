@@ -1,4 +1,3 @@
-import React from 'react'
 import { TitleWrapper, Line } from './styles'
 
 const Title = ({

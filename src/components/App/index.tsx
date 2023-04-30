@@ -1,5 +1,3 @@
-import React from 'react'
-
 import MainPage from '../MainPage'
 import { Container, Wrapper } from './styles'
 

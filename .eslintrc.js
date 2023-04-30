@@ -1,4 +1,7 @@
 // https://eslint.org/
+/**
+ * @type {import('eslint').Linter.Config}
+ */
 module.exports = {
   env: {
     es6: true,
@@ -7,16 +10,18 @@ module.exports = {
   },
   parser: '@typescript-eslint/parser',
   extends: [
-    'plugin:@typescript-eslint/recommended',
     'eslint:recommended',
     'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:@typescript-eslint/recommended',
   ],
-  plugins: ['@typescript-eslint', 'react', 'prettier'],
+  plugins: ['react', '@typescript-eslint', 'prettier'],
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 'latest',
     sourceType: 'module',
     project: './tsconfig.json',
     ecmaFeatures: {
+      impliedStrict: true,
       jsx: true,
     },
   },
@@ -30,7 +35,6 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     'linebreak-style': ['error', 'unix'],
     'no-console': ['warn', { allow: ['warn', 'error'] }],
-    'no-undef': 'error',
     'no-var': 'error',
     'no-unused-vars': ['error', { args: 'none' }],
     'unicode-bom': 'error',
@@ -40,7 +44,7 @@ module.exports = {
   settings: {
     react: {
       // https://github.com/yannickcr/eslint-plugin-react#configuration
-      version: require('react').version,
+      version: 'detect',
     },
   },
 }
