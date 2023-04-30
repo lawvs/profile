@@ -1,4 +1,4 @@
-const merge = require('webpack-merge')
+const mergePlugin = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const baseWebpackConfig = require('./webpack.base.conf')
@@ -7,10 +7,10 @@ const utils = require('./utils')
 /**
  * @type {import('webpack').Configuration}
  */
-const webpackConfig = merge(baseWebpackConfig, {
+const webpackConfig = mergePlugin.merge(baseWebpackConfig, {
   mode: 'development',
   // https://webpack.js.org/configuration/devtool/
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'cheap-module-source-map',
   output: {
     publicPath: '/',
   },
@@ -24,8 +24,9 @@ const webpackConfig = merge(baseWebpackConfig, {
   devServer: {
     port: 3000,
     open: true,
+    hot: true,
     historyApiFallback: true,
-    contentBase: utils.resolvePath('public'),
+    static: { directory: utils.resolvePath('public') },
   },
   performance: {
     hints: false,
