@@ -21,18 +21,18 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 20.x
           cache: "npm"
       - run: npm ci
       - run: npm run lint
       - run: npm run build
       - name: Upload pages artifacts
         # https://github.com/actions/upload-pages-artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: "dist/"
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/master'
         # https://github.com/actions/deploy-pages
-        uses: actions/deploy-pages@v2.0.0
+        uses: actions/deploy-pages@v4
