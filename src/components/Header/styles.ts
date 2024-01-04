@@ -1,13 +1,5 @@
 import styled, { keyframes } from 'styled-components'
 
-export const HeaderWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-self: stretch;
-  justify-content: center;
-  align-items: center;
-`
-
 const fadein = keyframes`
   from { opacity: 0; }
   to   { opacity: 1; }
@@ -19,9 +11,22 @@ export const RoundImg = styled.img`
   animation: ${fadein} 1s ease;
 `
 
+export const HeaderWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-self: stretch;
+  align-items: center;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+    & > ${RoundImg} {
+      margin-top: 40px;
+    }
+  }
+`
+
 export const TitleWrapper = styled.div`
   display: flex;
-  flex: 0.5 1 200px;
   flex-direction: column;
   align-items: stretch;
   /* title */

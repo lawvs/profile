@@ -1,4 +1,4 @@
-import { TitleWrapper, Line } from './styles'
+import { TitleWrapper } from './styles'
 
 const Title = ({
   title,
@@ -9,7 +9,6 @@ const Title = ({
 }) => (
   <TitleWrapper>
     {title && <h5>{title}</h5>}
-    <Line />
     {subtitle && <p>{subtitle}</p>}
   </TitleWrapper>
 )

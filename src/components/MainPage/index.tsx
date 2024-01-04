@@ -2,7 +2,7 @@ import LanguagesSwitcher from '../LanguagesSwitcher'
 import Header from '../Header'
 import Content from '../Content'
 import { USERNAME } from '../../constant'
-import { FooterWrapper, Page } from './styles'
+import { FooterWrapper, Paper } from './styles'
 
 const Footer = () => (
   <FooterWrapper>
@@ -11,12 +11,12 @@ const Footer = () => (
 )
 
 const MainPage = () => (
-  <Page>
+  <Paper>
     <LanguagesSwitcher />
     <Header />
     <Content />
     <Footer />
-  </Page>
+  </Paper>
 )
 
 export default MainPage

@@ -11,18 +11,21 @@ const pageIn = keyframes`
   }
 `
 
-export const Page = styled.div`
+export const Paper = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 0.1 1 700px;
+  flex: 0.5 1 600px;
   justify-content: space-around;
   align-items: center;
   position: relative;
   overflow: hidden;
+  height: 80%;
   min-height: 300px;
+  max-height: 500px;
+  max-width: 800px;
 
   padding: 20px;
-  margin: 20px;
+  margin: auto 20px;
   border-radius: 3px;
   box-shadow: 0 4px 8px #00000033;
   background-color: #fff;
@@ -36,4 +39,8 @@ export const FooterWrapper = styled.footer`
   right: 0px;
   bottom: 0px;
   color: #5f5f5f;
+
+  @media (max-width: 640px) {
+    display: none;
+  }
 `
