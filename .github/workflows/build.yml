@@ -25,6 +25,9 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run build
+        env:
+          USERNAME: ${{ vars.USERNAME }}
+          EMAIL: ${{ vars.EMAIL }}
       - run: npm run lint
       - name: Upload pages artifacts
         # https://github.com/actions/upload-pages-artifact
