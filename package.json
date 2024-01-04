@@ -5,7 +5,8 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "webpack serve --config config/webpack.dev.conf.js --mode=development",
-    "build": "webpack --config config/webpack.prod.conf.js --mode=production",
+    "fetchUserInfo": "ts-node scripts/fetchUserInfo.ts",
+    "build": "npm run fetchUserInfo && webpack --config config/webpack.prod.conf.js --mode=production",
     "lint": "eslint --ext .ts,.tsx,.json .",
     "lint:fix": "npm run lint -- --fix",
     "clean": "rm -rf dist",
@@ -48,6 +49,7 @@
     "prettier": "^2.8.8",
     "process": "^0.11.10",
     "ts-loader": "^9.4.2",
+    "ts-node": "^10.9.2",
     "typescript": "^5.0.4",
     "url-loader": "^4.1.0",
     "webpack": "^5.81.0",

@@ -1,12 +1,12 @@
 import LanguagesSwitcher from '../LanguagesSwitcher'
 import Header from '../Header'
 import Content from '../Content'
-import { USERNAME } from '../../constant'
 import { FooterWrapper, Paper } from './styles'
+import User from '../../../dist/user.json'
 
 const Footer = () => (
   <FooterWrapper>
-    CopyRight © {new Date().getFullYear()} {USERNAME}. All rights reserved.
+    CopyRight © {new Date().getFullYear()} {User.name}. All rights reserved.
   </FooterWrapper>
 )
 

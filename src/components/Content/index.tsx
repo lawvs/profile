@@ -6,22 +6,22 @@ import { faBook } from '@fortawesome/free-solid-svg-icons/faBook'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope'
 
 import { AnchorButton, AnchorButtonProps } from '../Button'
-import { GITHUB_URL, BLOG_URL, EMAIL_URL } from '../../constant'
+import User from '../../../dist/user.json'
 
 const BUTTON_DATA: AnchorButtonProps[] = [
   {
     text: 'GitHub',
-    href: GITHUB_URL,
+    href: User.githubUrl,
     icon: faGithub,
   },
   {
     text: 'Blog',
-    href: BLOG_URL,
+    href: User.blog,
     icon: faBook,
   },
   {
     text: 'Email',
-    href: EMAIL_URL,
+    href: User.email ?? undefined,
     icon: faEnvelope,
   },
 ].filter((i) => i.href)
