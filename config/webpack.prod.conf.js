@@ -1,4 +1,3 @@
-const url = require('url')
 const mergePlugin = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -14,7 +13,9 @@ const webpackConfig = mergePlugin.merge(baseWebpackConfig, {
   devtool: process.env.CI ? 'source-map' : false,
   output: {
     filename: '[name].[chunkhash:8].js',
-    clean: true,
+    clean: {
+      keep: 'user.json',
+    },
   },
   plugins: [
     // https://github.com/ampedandwired/html-webpack-plugin
