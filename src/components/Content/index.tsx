@@ -21,7 +21,7 @@ const BUTTON_DATA: AnchorButtonProps[] = [
   },
   {
     text: 'Email',
-    href: User.email ?? undefined,
+    href: User.email ? 'mailto:' + User.email : undefined,
     icon: faEnvelope,
   },
 ].filter((i) => i.href)
