@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { IconDefinition } from '@fortawesome/fontawesome-common-types'
+import type { IconDefinition } from '@fortawesome/fontawesome-common-types'
 
 import { ButtonWrapper, AnchorButtonWrapper } from './styles'
 
@@ -25,23 +25,27 @@ const removeNonHTMLProps = (props: { [x: string]: any }, invalidProps = INVALID_
     { ...props },
   )
 
-const renderChildren = ({ icon, text, children }: ButtonProps) => [
-  icon && <FontAwesomeIcon key="icon" icon={icon} />,
-  (text || children) && (
-    <span key="text">
-      {text}
-      {children}
-    </span>
-  ),
-]
+const ButtonChildren = ({ icon, text, children }: ButtonProps) => (
+  <>
+    {icon && <FontAwesomeIcon key="icon" icon={icon} />}
+    {(text || children) && (
+      <span key="text">
+        {text}
+        {children}
+      </span>
+    )}
+  </>
+)
 
 const Button = (props: ButtonProps) => (
-  <ButtonWrapper {...removeNonHTMLProps(props)}>{renderChildren(props)}</ButtonWrapper>
+  <ButtonWrapper {...removeNonHTMLProps(props)}>
+    <ButtonChildren {...props}></ButtonChildren>
+  </ButtonWrapper>
 )
 
 const AnchorButton = (props: AnchorButtonProps) => (
   <AnchorButtonWrapper role="button" {...removeNonHTMLProps(props)}>
-    {renderChildren(props)}
+    <ButtonChildren {...props}></ButtonChildren>
   </AnchorButtonWrapper>
 )
 
