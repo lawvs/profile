@@ -4,9 +4,9 @@
   "description": "a personal website",
   "scripts": {
     "start": "npm run dev",
-    "dev": "webpack serve --config config/webpack.dev.conf.js --mode=development",
+    "dev": "webpack serve --config config/webpack.dev.conf.ts --mode=development",
     "fetchUserInfo": "ts-node scripts/fetchUserInfo.ts",
-    "build": "npm run fetchUserInfo && webpack --config config/webpack.prod.conf.js --mode=production",
+    "build": "npm run fetchUserInfo && webpack --config config/webpack.prod.conf.ts --mode=production",
     "lint": "eslint --ext .ts,.tsx,.json .",
     "lint:fix": "npm run lint -- --fix",
     "clean": "rm -rf dist",

@@ -1,13 +1,10 @@
-const mergePlugin = require('webpack-merge')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import type { Configuration } from 'webpack'
+import mergePlugin from 'webpack-merge'
+import { resolvePath } from './utils'
+import baseWebpackConfig from './webpack.base.conf'
 
-const baseWebpackConfig = require('./webpack.base.conf')
-const utils = require('./utils')
-
-/**
- * @type {import('webpack').Configuration}
- */
-const webpackConfig = mergePlugin.merge(baseWebpackConfig, {
+const webpackConfig: Configuration = mergePlugin(baseWebpackConfig, {
   mode: 'production',
   bail: true,
   devtool: process.env.CI ? 'source-map' : false,
@@ -20,7 +17,7 @@ const webpackConfig = mergePlugin.merge(baseWebpackConfig, {
   plugins: [
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
-      template: utils.resolvePath('public/index.html'),
+      template: resolvePath('public/index.html'),
       inject: true,
       minify: {
         removeComments: true,
