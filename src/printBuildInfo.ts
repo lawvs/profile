@@ -14,7 +14,7 @@ const printBuildInfo = () => {
   console.log('Environment:', `${process.env.NODE_ENV}${isCI ? '(ci)' : ''}`)
   console.log('Version:', `${version}-${abbreviatedSha}`)
   console.log(`This is an open source project, you can view its source code on Github!`)
-  console.log(github)
+  github && console.log(`${github}/tree/${abbreviatedSha}`)
   console.groupEnd()
 }
 
