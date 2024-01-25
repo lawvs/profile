@@ -7,6 +7,7 @@
     "dev": "webpack serve --config config/webpack.dev.conf.ts --mode=development",
     "fetchUserInfo": "ts-node scripts/fetchUserInfo.ts",
     "build": "npm run fetchUserInfo && webpack --config config/webpack.prod.conf.ts --mode=production",
+    "typeCheck": "tsc --noEmit --project .",
     "lint": "eslint --ext .ts,.tsx,.json .",
     "lint:fix": "npm run lint -- --fix",
     "clean": "rm -rf dist",
