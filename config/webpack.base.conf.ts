@@ -1,5 +1,6 @@
 import type { Configuration } from 'webpack'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
+import InfoPlugin from 'unplugin-info/webpack'
 
 import { resolvePath } from './utils'
 
@@ -36,6 +37,7 @@ const baseWebpackConfig: Configuration = {
     ],
   },
   plugins: [
+    InfoPlugin(),
     new CopyWebpackPlugin({
       patterns: [
         {
